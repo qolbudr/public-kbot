@@ -1,1 +1,0 @@
-email@example.com|password|reward_custom_data
