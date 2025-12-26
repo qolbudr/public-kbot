@@ -1,0 +1,6 @@
+{
+  "mediaId": "39",
+  "udid": "a144a96c-7d96-3569-8d60-35ef7dfeec76",
+  "time": "20251226213238",
+  "signature": "y_yHjJx198XIEQDbT4hNXowiimkBMx1KmcTgf0fGEWc"
+}
