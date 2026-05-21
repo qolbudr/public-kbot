@@ -29,4 +29,4 @@ done
 
 exec proot-distro login ubuntu \
     --bind "$ACCOUNT_PATH":/root/accounts \
-    -- bash -c "~/kbot-linux-arm"
+    -- bash -c "chmod +x ~/kbot-linux-arm && ~/kbot-linux-arm"
