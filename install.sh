@@ -1,4 +1,5 @@
 cd ~
+termux-setup-storage
 pkg update -y
 yes | pkg upgrade -y
 pkg install proot-distro -y
