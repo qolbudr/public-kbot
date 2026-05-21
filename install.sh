@@ -10,5 +10,5 @@ proot-distro login ubuntu -- bash -c "mkdir -p /storage/emulated/0/kbot-main/1 &
 proot-distro login ubuntu -- bash -c "ln -s /storage/emulated/0/kbot-main/1/accounts ~/accounts"
 proot-distro login ubuntu -- bash -c "rm -rf ~/kbot-tmp"
 proot-distro login ubuntu -- bash -c "curl -fsSL https://raw.githubusercontent.com/qolbudr/public-kbot/refs/heads/main/symlink.sh -o symlink.sh"
-proot-distro login ubuntu -- bash -c "echo '~/symlink.sh' > ~/.bashrc"
-echo 'proot-distro login ubuntu' > ~/.bashrc
+proot-distro login ubuntu -- bash -c "echo '~/symlink.sh' >> ~/.bashrc"
+echo 'proot-distro login ubuntu' >> ~/.bashrc
