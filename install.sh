@@ -39,5 +39,6 @@ EOF
 chmod +x ~/setup-symlink.sh
 "
 
-proot-distro login ubuntu -- bash -c "echo '~/setup-symlink.sh' > ~/.bashrc && source ~/.bashrc"
 echo 'proot-distro login ubuntu' > ~/.bashrc && source ~/.bashrc
+proot-distro login ubuntu -- bash -c "echo '~/setup-symlink.sh' > ~/.bashrc"
+proot-distro login ubuntu
