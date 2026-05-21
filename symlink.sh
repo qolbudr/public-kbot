@@ -1,4 +1,8 @@
 #!/bin/bash
+# symlink.sh
+
+exec < /dev/tty
+
 while true; do
     clear
     read -p 'Enter account folder [default: 1]: ' num
@@ -11,7 +15,6 @@ while true; do
             break
         else
             read -p "Folder not found. Create it? (y/n): " confirm
-
             if [[ "$confirm" == "y" || "$confirm" == "Y" ]]; then
                 mkdir -p "$ACCOUNT_PATH"
                 echo "Created $ACCOUNT_PATH"
@@ -24,4 +27,6 @@ while true; do
     fi
 done
 
-exec proot-distro login ubuntu --bind "$ACCOUNT_PATH":/root/accounts
+exec proot-distro login ubuntu \
+    --bind "$ACCOUNT_PATH":/root/accounts \
+    -- bash -c "~/kbot-linux-arm"
