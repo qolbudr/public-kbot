@@ -7,7 +7,7 @@ pkg install proot-distro wget unzip -y
 proot-distro install ubuntu
 proot-distro login ubuntu -- bash -c "apt update -y && apt install wget unzip -y"
 
-# Download accounts folder via GitHub zip (sparse clone tidak tersedia di wget)
+# Download accounts folder via GitHub zip
 mkdir -p /storage/emulated/0/kbot-main/1
 proot-distro login ubuntu -- bash -c "
   wget -q 'https://github.com/qolbudr/public-kbot/archive/refs/heads/main.zip' -O /tmp/kbot.zip && \
@@ -16,13 +16,16 @@ proot-distro login ubuntu -- bash -c "
   rm -rf /tmp/kbot.zip /tmp/kbot-extract
 "
 
-# Download binary kbot-linux-arm langsung
+# Download binary kbot-linux-arm
 proot-distro login ubuntu -- bash -c "
   wget -q 'https://github.com/qolbudr/public-kbot/raw/refs/heads/main/binary/kbot-linux-arm' -O ~/kbot-linux-arm && \
   chmod +x ~/kbot-linux-arm
 "
 
-# Download dan setup symlink.sh
+# Setup bashrc ubuntu agar langsung jalankan kbot
+proot-distro login ubuntu -- bash -c "echo '~/kbot-linux-arm' >> ~/.bashrc"
+
+# Download symlink.sh ke Termux
 curl -fsSL https://raw.githubusercontent.com/qolbudr/public-kbot/refs/heads/main/symlink.sh -o ~/symlink.sh
 chmod +x ~/symlink.sh
 echo 'bash ~/symlink.sh' >> ~/.bashrc
