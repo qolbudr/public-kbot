@@ -1,3 +1,4 @@
+#!/bin/bash
 while true; do
     clear
     read -p 'Enter account folder [default: 1]: ' num
@@ -23,7 +24,4 @@ while true; do
     fi
 done
 
-rm -f ~/accounts
-ln -s "$ACCOUNT_PATH" ~/accounts
-
-~/kbot-linux-arm
+exec proot-distro login ubuntu --bind "$ACCOUNT_PATH":/root/accounts -- bash -c "~/kbot-linux-arm"
