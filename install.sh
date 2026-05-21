@@ -12,3 +12,4 @@ proot-distro login ubuntu -- bash -c "rm -rf ~/kbot-tmp"
 proot-distro login ubuntu -- bash -c "curl -fsSL https://raw.githubusercontent.com/qolbudr/public-kbot/refs/heads/main/symlink.sh -o symlink.sh && chmod +x symlink.sh"
 proot-distro login ubuntu -- bash -c "echo '~/symlink.sh' >> ~/.bashrc"
 echo 'proot-distro login ubuntu' >> ~/.bashrc
+proot-distro login ubuntu
