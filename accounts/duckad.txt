@@ -1,1 +1,1 @@
-email@example.com|<USERID>
+email@example.com|<USER_ID>

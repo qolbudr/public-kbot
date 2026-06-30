@@ -1,1 +1,1 @@
-email@example.com|<MAID>
+k|kakao@example.com\ng|email@gmail.com

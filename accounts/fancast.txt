@@ -1,1 +1,1 @@
-email@example.com|password|token
+email@example.com|password|<TOKEN>
