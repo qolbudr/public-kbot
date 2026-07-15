@@ -18,7 +18,8 @@ mkdir -p /storage/emulated/0/Kbot
 proot-distro login ubuntu -- bash -c "
   wget 'https://github.com/qolbudr/public-kbot/archive/refs/heads/main.zip' -O /tmp/kbot.zip && \
   unzip -q /tmp/kbot.zip 'public-kbot-main/accounts/*' -d /tmp/kbot-extract && \
-  cp -r /tmp/kbot-extract/public-kbot-main/accounts /storage/emulated/0/Kbot/ && \
+  mkdir -p /storage/emulated/0/Kbot && \
+  mv /tmp/kbot-extract/public-kbot-main/accounts/* /storage/emulated/0/Kbot/ && \
   rm -rf /tmp/kbot.zip /tmp/kbot-extract
 "
 
