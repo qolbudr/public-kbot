@@ -28,6 +28,10 @@ bash ~/symlink.sh < /dev/tty
 EOF
 fi
 
+proot-distro login ubuntu -- bash -c "mv ~/kbot-linux-arm.tmp ~/kbot-linux-arm"
+
 echo ""
 echo "✅ Apply Update Selesai"
 bash ~/symlink.sh < /dev/tty
+
+
