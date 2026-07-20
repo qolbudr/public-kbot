@@ -5,6 +5,7 @@ cd ~
 termux-setup-storage
 
 # Hapus folder kbot lama dari internal storage
+rm -rf /storage/emulated/0/kbot-main
 rm -rf /storage/emulated/0/Kbot
 
 pkg update -y
@@ -14,12 +15,11 @@ proot-distro install ubuntu
 proot-distro login ubuntu -- bash -c "apt update -y && apt install wget unzip -y"
 
 # Download accounts folder
-mkdir -p /storage/emulated/0/Kbot
+mkdir -p /storage/emulated/0/Kbot/1
 proot-distro login ubuntu -- bash -c "
   wget 'https://github.com/qolbudr/public-kbot/archive/refs/heads/main.zip' -O /tmp/kbot.zip && \
   unzip -q /tmp/kbot.zip 'public-kbot-main/accounts/*' -d /tmp/kbot-extract && \
-  mkdir -p /storage/emulated/0/Kbot && \
-  mv /tmp/kbot-extract/public-kbot-main/accounts/* /storage/emulated/0/Kbot/ && \
+  cp -r /tmp/kbot-extract/public-kbot-main/accounts /storage/emulated/0/Kbot/1/ && \
   rm -rf /tmp/kbot.zip /tmp/kbot-extract
 "
 
