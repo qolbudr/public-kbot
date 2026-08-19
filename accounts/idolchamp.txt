@@ -1,2 +1,1 @@
-g|email@gmail.com
-k|kakao@example.com
+g|email@gmail.com\nk|kakao@example.com
